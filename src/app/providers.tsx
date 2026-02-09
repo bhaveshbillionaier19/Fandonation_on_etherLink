@@ -7,29 +7,29 @@ import { WagmiProvider, http } from "wagmi";
 import { type Chain } from "viem";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const somniaTestnet = {
-  id: 50312,
-  name: 'Somnia Testnet',
+const etherlinkTestnet = {
+  id: 127823,
+  name: 'Etherlink Shadownet',
   nativeCurrency: {
     decimals: 18,
-    name: 'STT',
-    symbol: 'STT',
+    name: 'XTZ',
+    symbol: 'XTZ',
   },
   
   
   rpcUrls: {
-    default: { http: ['https://dream-rpc.somnia.network/'] },
-    public: { http: ['https://dream-rpc.somnia.network/'] },
+    default: { http: ['https://node.shadownet.etherlink.com'] },
+    public: { http: ['https://node.shadownet.etherlink.com'] },
   },
   blockExplorers: {
-    default: { name: 'Somnia Explorer', url: 'https://shannon-explorer.somnia.network/' },
+    default: { name: 'Etherlink Explorer', url: 'https://testnet.explorer.etherlink.com/' },
   },
 } as const satisfies Chain;
 
 const config = getDefaultConfig({
   appName: "Fan Donation Platform",
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID ?? "",
-  chains: [somniaTestnet],
+  chains: [etherlinkTestnet],
   wallets: [
     {
       groupName: "Preferred",
@@ -37,7 +37,7 @@ const config = getDefaultConfig({
     },
   ],
   transports: {
-    [somniaTestnet.id]: http(process.env.NEXT_PUBLIC_RPC_URL || "https://dream-rpc.somnia.network/"),
+    [etherlinkTestnet.id]: http(process.env.NEXT_PUBLIC_RPC_URL || "https://node.shadownet.etherlink.com"),
   },
   ssr: true,
 });
