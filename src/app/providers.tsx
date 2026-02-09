@@ -27,7 +27,7 @@ const somniaTestnet = {
 } as const satisfies Chain;
 
 const config = getDefaultConfig({
-  appName: "NFT Donation Platform",
+  appName: "Fan Donation Platform",
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID ?? "",
   chains: [somniaTestnet],
   wallets: [

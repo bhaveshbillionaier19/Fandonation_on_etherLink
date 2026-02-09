@@ -15,10 +15,10 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary text-background text-sm font-bold">
-              ND
+              FD
             </span>
             <span className="flex flex-col">
-              <span className="text-sm font-semibold leading-tight">NFT Donations</span>
+              <span className="text-sm font-semibold leading-tight">Fan Donation</span>
               <span className="text-xs text-muted-foreground leading-tight">
                 Support creators on-chain
               </span>

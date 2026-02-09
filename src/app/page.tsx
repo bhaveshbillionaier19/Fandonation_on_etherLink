@@ -170,7 +170,7 @@ export default function Home() {
             <p className="text-lg font-semibold">{visibleNfts.length}</p>
           </div>
           <div className="rounded-xl border bg-card dark:bg-gradient-to-br dark:from-slate-900/60 dark:to-emerald-900/40 px-4 py-3">
-            <p className="text-xs text-muted-foreground">Total donated</p>
+            <p className="text-xs text-muted-foreground">Total fan donations</p>
             <p className="text-lg font-semibold">
               {nfts.length > 0 ? `${formatEther(totalDonationsAll)} ETH` : "0 ETH"}
             </p>
@@ -187,7 +187,7 @@ export default function Home() {
           <div className="rounded-2xl border bg-card dark:bg-gradient-to-br dark:from-slate-900/80 dark:to-slate-800/80 p-6">
             <h2 className="text-xl font-semibold mb-1">Top Supported NFTs</h2>
             <p className="text-sm text-muted-foreground mb-4">
-              NFTs with the highest total donations.
+              NFTs with the highest total fan donations.
             </p>
             <div className="space-y-3 max-h-80 overflow-y-auto pr-1">
               {topDonatedNfts.map((nft, index) => (
@@ -210,7 +210,7 @@ export default function Home() {
                     <div className="min-w-0">
                       <p className="text-sm font-medium truncate">{nft.metadata.name}</p>
                       <p className="text-xs text-muted-foreground">
-                        {formatEther(nft.totalDonations)} ETH donated
+                        {formatEther(nft.totalDonations)} ETH fan donations
                       </p>
                     </div>
                   </div>
@@ -220,13 +220,13 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl border bg-card dark:bg-gradient-to-br dark:from-slate-900/80 dark:to-slate-800/80 p-6">
-            <h2 className="text-xl font-semibold mb-1">Top Donors</h2>
+            <h2 className="text-xl font-semibold mb-1">Top Fan Donors</h2>
             <p className="text-sm text-muted-foreground mb-4">
               Most generous supporters across all NFTs (this session).
             </p>
             {topDonors.length === 0 ? (
               <p className="text-sm text-muted-foreground">
-                No donations yet. Be the first to support a creator.
+                No fan donations yet. Be the first to support a creator.
               </p>
             ) : (
               <ul className="space-y-3 max-h-80 overflow-y-auto pr-1">

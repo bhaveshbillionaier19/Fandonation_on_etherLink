@@ -45,7 +45,7 @@ export default function NFTCard({ nft, onDelete, onDonation, onTotalsChange }: N
   useEffect(() => {
     if (isConfirmed) {
       toast({
-        title: "Donation Successful!",
+        title: "Fan Donation Successful!",
         description: "Thank you for your support!",
       });
       setShowConfetti(true);
@@ -57,7 +57,7 @@ export default function NFTCard({ nft, onDelete, onDonation, onTotalsChange }: N
 
   const handleDonate = () => {
     if (!donationAmount || parseFloat(donationAmount) <= 0) {
-      toast({ title: "Invalid Amount", description: "Please enter a valid donation amount.", variant: "destructive" });
+      toast({ title: "Invalid Amount", description: "Please enter a valid fan donation amount.", variant: "destructive" });
       return;
     }
     if (!contractAddress) {
@@ -138,15 +138,15 @@ export default function NFTCard({ nft, onDelete, onDonation, onTotalsChange }: N
         <CardFooter className="flex justify-between items-center p-4 bg-muted/50">
           <div>
               <p className="text-sm font-bold">{`${formatEther(computedTotalDonations)} ETH`}</p>
-              <p className="text-xs text-muted-foreground">Total Donated</p>
+              <p className="text-xs text-muted-foreground">Total Fan Donations</p>
           </div>
           <Dialog>
             <DialogTrigger asChild>
-              <Button disabled={isProcessing}>Donate</Button>
+              <Button disabled={isProcessing}>Fan Donate</Button>
             </DialogTrigger>
             <DialogContent>
             <DialogHeader>
-              <DialogTitle>Donate to {metadata?.name || `NFT #${tokenId}`}</DialogTitle>
+              <DialogTitle>Fan Donate to {metadata?.name || `NFT #${tokenId}`}</DialogTitle>
               <DialogDescription>Your support helps the creator. Enter the amount of ETH you'd like to donate.</DialogDescription>
             </DialogHeader>
             <div className="space-y-4">
@@ -160,10 +160,10 @@ export default function NFTCard({ nft, onDelete, onDonation, onTotalsChange }: N
                   />
                 </div>
                 <Button onClick={handleDonate} disabled={isProcessing} className="w-full">
-                  {isProcessing ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : "Confirm Donation"}
+                  {isProcessing ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : "Confirm Fan Donation"}
                 </Button>
                 <div className="space-y-2">
-                    <h4 className="text-sm font-semibold">Recent Donations</h4>
+                    <h4 className="text-sm font-semibold">Recent Fan Donations</h4>
                     <div className="max-h-32 overflow-y-auto space-y-1 pr-2">
                         {events.length > 0 ? (
                             events.map((event, index) => (
@@ -173,7 +173,7 @@ export default function NFTCard({ nft, onDelete, onDonation, onTotalsChange }: N
                                 </div>
                             ))
                         ) : (
-                            <p className="text-xs text-muted-foreground">No donations yet.</p>
+                            <p className="text-xs text-muted-foreground">No fan donations yet.</p>
                         )}
                     </div>
                 </div>
